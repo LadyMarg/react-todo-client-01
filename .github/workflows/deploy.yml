@@ -25,6 +25,7 @@ jobs:
         docker push ${{ secrets.DOCKER_USERNAME }}/todo-frontend
 
   deploy:
+    needs: build
     runs-on: ubuntu-latest
 
     steps:
@@ -38,5 +39,5 @@ jobs:
           docker pull ${{ secrets.DOCKER_USERNAME }}/todo-frontend
           docker stop todo-frontend || true
           docker rm todo-frontend || true
-          docker run -d -p 80:80 --name todo-frontend --env-file /path/to/frontend.env ${{ secrets.DOCKER_USERNAME }}/todo-frontend
+          docker run -d -p 80:80 --name todo-frontend ${{ secrets.DOCKER_USERNAME }}/todo-frontend
 
