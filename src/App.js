@@ -68,7 +68,7 @@ function App() {
   return (
     <div className="container mx-auto">
       <h1 className="font-extrabold text-3xl text-white flex items-center justify-center mt-8">
-        ToDo App
+       Lady_Marg_Opeo ToDo App
       </h1>
       <div className="bg-blue-200 flex items-center justify-center mt-8">
         <form
